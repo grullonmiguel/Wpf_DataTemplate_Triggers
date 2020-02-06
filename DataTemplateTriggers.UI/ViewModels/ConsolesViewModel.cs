@@ -1,4 +1,6 @@
-﻿using DataTemplateTriggers.UI.Utilities;
+﻿using DataTemplateTriggers.UI.Models;
+using DataTemplateTriggers.UI.Utilities;
+using System.Collections.ObjectModel;
 
 namespace DataTemplateTriggers.UI.ViewModels
 {
@@ -20,6 +22,11 @@ namespace DataTemplateTriggers.UI.ViewModels
             get => _header;
             private set => SetProperty(ref _header, value);
         }
+
+        /// <summary>
+        /// Keeps a list of video game consoles
+        /// </summary>
+        public ObservableCollection<GameConsole> ConsoleCollection { get; private set; }
 
         #endregion
 
