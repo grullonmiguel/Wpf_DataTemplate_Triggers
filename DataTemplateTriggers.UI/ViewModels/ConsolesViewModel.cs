@@ -1,4 +1,5 @@
 ﻿using DataTemplateTriggers.UI.Models;
+using DataTemplateTriggers.UI.Services;
 using DataTemplateTriggers.UI.Utilities;
 using System.Collections.ObjectModel;
 
@@ -6,13 +7,9 @@ namespace DataTemplateTriggers.UI.ViewModels
 {
     public class ConsolesViewModel : ViewModelBase
     {
-        #region Fields
-
         private string _header;
 
-        #endregion
-
-        #region Properties
+        private readonly IConsoleDataService _dataService;
 
         /// <summary>
         /// Gets or sets the Header for the View
@@ -24,24 +21,15 @@ namespace DataTemplateTriggers.UI.ViewModels
         }
 
         /// <summary>
-        /// Keeps a list of video game consoles
+        /// Gets a list of video game consoles
         /// </summary>
-        public ObservableCollection<GameConsole> ConsoleCollection { get; private set; }
-
-        #endregion
-
-        #region Constructor
+        public ObservableCollection<GameConsole> Consoles { get; private set; }
 
         public ConsolesViewModel()
         {
-            Header = "Home Video Game Consoles";
+            _dataService = new MockDataService();
+            Header = _dataService.GetHeader();
+            Consoles = _dataService.GetConsoles().ToObservableCollection();
         }
-
-        #endregion
-
-        #region Methods
-
-
-        #endregion
     }
 }

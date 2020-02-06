@@ -7,8 +7,6 @@ namespace DataTemplateTriggers.UI.Services
     {
         private readonly IEnumerable<GameConsole> _consoles;
 
-        public IEnumerable<GameConsole> GetConsoles() => _consoles;
-
         public MockDataService()
         {
             _consoles = new List<GameConsole>()
@@ -23,9 +21,20 @@ namespace DataTemplateTriggers.UI.Services
             };
         }
 
-        private GameConsole Create(string name, string company, int year)
-        {
-            return new GameConsole { Name = name, Manufacturer = company, Year = year };
-        }
+        /// <summary>
+        /// Returns a list of <see cref="GameConsole" />
+        /// </summary>
+        public IEnumerable<GameConsole> GetConsoles() => _consoles;
+
+        /// <summary>
+        /// Returns the Header title for the list
+        /// </summary>
+        public string GetHeader() => "Home Video Game Consoles";
+
+        /// <summary>
+        /// Creates a new instance of the <see cref="GameConsole" class/>
+        /// </summary>
+        private GameConsole Create(string name, string company, int year) => 
+            new GameConsole { Name = name, Manufacturer = company, Year = year };
     }
 }

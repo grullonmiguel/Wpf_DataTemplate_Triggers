@@ -49,4 +49,27 @@
         <Setter Property="Background" Value="{StaticResource BackgroundBrush3}" />
     </Style>
 
+    <!--  A Style that all ListBoxes  -->
+    <Style TargetType="ListBox">
+        <Setter Property="MinHeight" Value="200" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <!--  A Style for a Border control that shows a shadow and rounded corners  -->
+    <Style x:Key="Card" TargetType="Border">
+        <Setter Property="Padding" Value="24" />
+        <Setter Property="Background" Value="{StaticResource BackgroundBrush2}" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="Effect">
+            <Setter.Value>
+                <DropShadowEffect
+                    BlurRadius="4"
+                    Direction="315"
+                    Opacity="0.7"
+                    ShadowDepth="3" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
 </ResourceDictionary>

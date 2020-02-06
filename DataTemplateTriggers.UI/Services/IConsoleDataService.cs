@@ -6,5 +6,7 @@ namespace DataTemplateTriggers.UI.Services
     public interface IConsoleDataService
     {
         IEnumerable<GameConsole> GetConsoles();
+
+        string GetHeader();
     }
 }

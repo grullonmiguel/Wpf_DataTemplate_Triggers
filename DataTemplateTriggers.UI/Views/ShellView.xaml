@@ -21,9 +21,9 @@
         <TextBlock Style="{StaticResource TitleText}" Text="WPF DataTemplate Triggers" />
 
         <!--  Line Separator  -->
-        <Separator Grid.Row="1" Margin="0,16" />
-        
-        <!-- Consoles View -->
+        <Separator Grid.Row="1" Margin="0,16,0,24" />
+
+        <!--  Consoles View  -->
         <local:ConsolesView Grid.Row="2" HorizontalAlignment="Left" />
 
     </Grid>

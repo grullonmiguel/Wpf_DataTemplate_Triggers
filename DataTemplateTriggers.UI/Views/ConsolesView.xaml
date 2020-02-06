@@ -9,18 +9,7 @@
         <local:ConsolesViewModel />
     </UserControl.DataContext>
 
-    <Border
-        Padding="24"
-        Background="{StaticResource BackgroundBrush2}"
-        CornerRadius="5">
-
-        <Border.Effect>
-            <DropShadowEffect
-                BlurRadius="4"
-                Direction="315"
-                Opacity="0.7"
-                ShadowDepth="3" />
-        </Border.Effect>
+    <Border Style="{StaticResource Card}">
         <Grid>
 
             <!--  Definitions  -->
@@ -35,9 +24,8 @@
             <!--  Game Console List  -->
             <ListBox
                 Grid.Row="1"
-                MinHeight="200"
-                Background="Transparent"
-                BorderThickness="0" />
+                Margin="0,16,0,8"
+                ItemsSource="{Binding Consoles}" />
 
         </Grid>
     </Border>
