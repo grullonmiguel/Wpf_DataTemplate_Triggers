@@ -11,13 +11,20 @@ namespace DataTemplateTriggers.UI.Services
         {
             _consoles = new List<GameConsole>()
             {
-                Create("XBox 360",          "Microsoft",    2005),
-                Create("PlayStation 3",     "Sony",         2006),
-                Create("Wii",               "Nintendo",     2006),
-                Create("Wii U",             "Nintendo",     2012),
-                Create("PlayStation 4",     "Sony",         2013),
-                Create("XBox One",          "Microsoft",    2013),
-                Create("Nintendo Switch",   "Nintendo",     2017)
+                Create("NES",               "Nintendo", 1983),
+                Create("Super NES",         "Nintendo", 1990),
+                Create("PlayStation",       "Sony",     1994),
+                Create("Nintendo 64",       "Nintendo", 1996),
+                Create("PlayStation 2",     "Sony",     2000),
+                Create("GameCube",          "Nintendo", 2001),
+                Create("XBox",              "Microsoft",2001),
+                Create("XBox 360",          "Microsoft",2005),
+                Create("PlayStation 3",     "Sony",     2006),
+                Create("Wii",               "Nintendo", 2006),
+                Create("Wii U",             "Nintendo", 2012),
+                Create("PlayStation 4",     "Sony",     2013),
+                Create("XBox One",          "Microsoft",2013),
+                Create("Nintendo Switch",   "Nintendo", 2017)
             };
         }
 

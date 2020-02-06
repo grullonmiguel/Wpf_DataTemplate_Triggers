@@ -1,0 +1,55 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Styles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <DataTemplate x:Key="ConsoleTemplate" DataType="{x:Type ListViewItem}">
+
+        <!--  Item Template  -->
+        <Border x:Name="PART_BORDER" Width="225">
+            <TextBlock x:Name="PART_NAME" Foreground="{StaticResource ForegroundBrush3}">
+                <TextBlock.ToolTip>
+                    <ToolTip x:Name="PART_TOOLTIP" Padding="8 6" Background="{StaticResource BackgroundBrush2}">
+                        <TextBlock
+                            FontWeight="Bold"
+                            Foreground="{StaticResource ForegroundBrush1}"
+                            Text="{Binding Manufacturer}" />
+                    </ToolTip>
+                </TextBlock.ToolTip>
+                <Run Text="{Binding Year}" />
+                <Run Text=" - " />
+                <Run Text="{Binding Name}" />
+            </TextBlock>
+        </Border>
+
+        <!--  Triggers  -->
+        <DataTemplate.Triggers>
+
+            <!--  Microsoft  -->
+            <DataTrigger Binding="{Binding Manufacturer}" Value="Microsoft">
+                <Setter TargetName="PART_BORDER" Property="Style" Value="{StaticResource XBoxStyle}" />
+                <Setter TargetName="PART_NAME" Property="Foreground" Value="{StaticResource XBoxGreen}" />
+                <Setter TargetName="PART_TOOLTIP" Property="Background" Value="{StaticResource XBoxGreen}" />
+            </DataTrigger>
+
+            <!--  Nintendo  -->
+            <DataTrigger Binding="{Binding Manufacturer}" Value="Nintendo">
+                <Setter TargetName="PART_BORDER" Property="Style" Value="{StaticResource NintendoStyle}" />
+                <Setter TargetName="PART_NAME" Property="Foreground" Value="{StaticResource NintendoRed}" />
+                <Setter TargetName="PART_TOOLTIP" Property="Background" Value="{StaticResource NintendoRed}" />
+            </DataTrigger>
+
+            <!--  Sony  -->
+            <DataTrigger Binding="{Binding Manufacturer}" Value="Sony">
+                <Setter TargetName="PART_BORDER" Property="Style" Value="{StaticResource PlaystationStyle}" />
+                <Setter TargetName="PART_NAME" Property="Foreground" Value="{StaticResource PlaystationBlue}" />
+                <Setter TargetName="PART_TOOLTIP" Property="Background" Value="{StaticResource PlaystationBlue}" />
+            </DataTrigger>
+
+        </DataTemplate.Triggers>
+
+    </DataTemplate>
+
+</ResourceDictionary>

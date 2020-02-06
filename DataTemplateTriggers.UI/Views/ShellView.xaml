@@ -5,7 +5,7 @@
     xmlns:local="clr-namespace:DataTemplateTriggers.UI.Views"
     Title="{Binding Title}"
     Width="800"
-    Height="600"
+    Height="800"
     Background="{StaticResource BackgroundBrush1}"
     WindowStartupLocation="CenterScreen">
     <Grid Margin="24">
@@ -14,17 +14,25 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
 
         <!--  Title  -->
-        <TextBlock Style="{StaticResource TitleText}" Text="WPF DataTemplate Triggers" />
+        <TextBlock Style="{StaticResource TitleText}" Text="{Binding Title}" />
+
+        <!--  Description  -->
+        <TextBlock
+            Grid.Row="1"
+            Margin="0,8,0,0"
+            Foreground="{StaticResource ForegroundBrush2}"
+            Text="How to use DataTemplate Triggers in WPF." />
 
         <!--  Line Separator  -->
-        <Separator Grid.Row="1" Margin="0,16,0,24" />
+        <Separator Grid.Row="2" Margin="0,16,0,24" />
 
         <!--  Consoles View  -->
-        <local:ConsolesView Grid.Row="2" HorizontalAlignment="Left" />
+        <local:ConsolesView Grid.Row="3" HorizontalAlignment="Left" />
 
     </Grid>
 </Window>

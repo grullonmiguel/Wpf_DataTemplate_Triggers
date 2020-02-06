@@ -9,25 +9,27 @@
         <local:ConsolesViewModel />
     </UserControl.DataContext>
 
-    <Border Style="{StaticResource Card}">
-        <Grid>
+    <!--  Apply DataTemplate for Game Console List  -->
+    <UserControl.Resources>
+        <ResourceDictionary Source="../Assets/DataTemplates.xaml" />
+    </UserControl.Resources>
 
-            <!--  Definitions  -->
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto" />
-                <RowDefinition />
-            </Grid.RowDefinitions>
+    <Border Style="{StaticResource Card}">
+        <DockPanel>
 
             <!--  Header  -->
-            <TextBlock Style="{StaticResource HeaderText}" Text="{Binding Header}" />
+            <TextBlock
+                DockPanel.Dock="Top"
+                Style="{StaticResource HeaderText}"
+                Text="{Binding Header}" />
 
             <!--  Game Console List  -->
             <ListBox
-                Grid.Row="1"
-                Margin="0,16,0,8"
+                Margin="0,16,0,0"
+                ItemTemplate="{StaticResource ConsoleTemplate}"
                 ItemsSource="{Binding Consoles}" />
 
-        </Grid>
+        </DockPanel>
     </Border>
 
 </UserControl>

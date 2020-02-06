@@ -17,7 +17,7 @@ namespace DataTemplateTriggers.UI.ViewModels
 
         public ShellViewModel()
         {
-            Title = "WPF - DataTemplate Triggers";
+            Title = "WPF - DataTemplate Triggers Demo";
         }
     }
 }
